@@ -204,7 +204,6 @@ static int hwc_prepare(hwc_composer_device_t *dev, hwc_layer_list_t* list) {
     if (list && (list->flags & HWC_GEOMETRY_CHANGED)) {
         for (size_t i=0 ; i<list->numHwLayers ; i++) {
             //dump_layer(&list->hwLayers[i]);
-			struct hwc_layer_rd * lr = (struct hwc_layer_rd *)malloc(sizeof(struct hwc_layer_rd));
 			hwc_get_rd_layer(&list->hwLayers[i], lr);
 			if(hwc_can_render_layer(lr)){
 				if(HWC_DBG)	LOGD("Layer %d = OVERLAY!", i);
